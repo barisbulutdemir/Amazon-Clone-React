@@ -1,7 +1,7 @@
 import Header from "@/companents/Header";
 import Image from "next/image";
 import {useSelector} from "react-redux";
-import {selectItems} from "@/slices/basketSlice";
+import {selectItems, selectTotal} from "@/slices/basketSlice";
 import CheckoutProduct from "@/companents/CheckoutProduct";
 import {useSession} from "next-auth/react";
 
@@ -9,6 +9,7 @@ export default  function checkout(){
     const { data: session } = useSession(); // Değişiklik burada
 
     const items = useSelector(selectItems);
+    const total = useSelector(selectTotal);
     return (
         <>
             <div className="bg-gray-100 ">
@@ -52,7 +53,7 @@ export default  function checkout(){
                         {items.length > 0 &&
                             <div>
                                 <h2>Subtotal ({items.length} items)</h2>
-                                <p></p>
+                                <p>{total}</p>
                                 <button
                                 disabled={!session}
                                  className={`button-basket mt-3 

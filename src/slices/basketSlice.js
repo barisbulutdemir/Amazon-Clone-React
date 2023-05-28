@@ -31,4 +31,8 @@ export const { addToBasket, removeFromBasket } = basketSlice.actions;
 // mesela basketteki ürünleri direk useSelector ile selecitems dan çektik
 export const selectItems = (state) => state.basket.items;
 
+{/* total bakiyeyi almak için kullanıyoruz. mantığını anlamadım */}
+export const selectTotal = (state) =>
+    state.basket.items.reduce((total,item)=>total + item.price, 0);
+
 export default basketSlice.reducer;
