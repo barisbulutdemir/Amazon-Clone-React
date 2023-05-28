@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer companents {
+    .link {
+        @apply cursor-pointer hover:underline
+    }
+
+
+
+
+}
+
+.button-basket {
+    @apply mt-auto cursor-pointer text-xs md:text-sm py-2 bg-gradient-to-b from-yellow-200 to-yellow-500 border-yellow-300
+    rounded-sm focus:outline-none focus:ring-2 focus:ring-yellow-500 active:from-yellow-500;
+}
+
+.checkout-passive {
+    @apply mt-auto cursor-pointer text-xs md:text-sm py-2 bg-gradient-to-b from-gray-200 to-gray-500 border-gray-300
+    rounded-sm focus:outline-none focus:ring-2 focus:ring-yellow-500 active:from-yellow-500 text-black;
+}
+
